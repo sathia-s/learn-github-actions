@@ -14,8 +14,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      # - name: Set NPM package-lock false
-      #   run: npm config set package-lock false
+      - name: Set NPM package-lock false
+        run: npm config set package-lock false
       - name: Install dependencies
         run: npm i
       - name: Build Project
