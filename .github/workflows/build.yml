@@ -1,11 +1,11 @@
-name: IVS Inspgit ector Prerequisites
-on: 
+name: IVS Inspector Prerequisites
+on:
   push:
     branches:
-      - 'main'
-      - 'release/**'
+      - "main"
+      - "release/**"
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -16,4 +16,7 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci
-        
+      - name: Build Project
+        run: npm run build
+      - name: Deploy Project
+        run: echo "Deploying ..."
